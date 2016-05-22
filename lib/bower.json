@@ -1,0 +1,20 @@
+{
+  "name": "angular-address-book",
+  "homepage": "https://github.com/devoisaurus/angular-address-book",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "bootstrap": "^3.3.6"
+  }
+}
