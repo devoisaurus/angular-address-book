@@ -36,6 +36,7 @@ app.controller("EntryNewCtrl", function($scope){
 
 	$scope.addNewEntry = function(){
 		$scope.newEntry.id = $scope.entries.length;
+		console.log("you added a new item", $scope.newEntry);
 		$scope.entries.push($scope.newEntry);
 		$scope.newEntry = "";
 	};

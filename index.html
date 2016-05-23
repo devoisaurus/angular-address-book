@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" >
 		<link rel="stylesheet" type="text/css" href="styles/main.css">
 	</head>
-	<body ng-app="TodoApp">
+	<body ng-app="AddressApp">
 		<nav class="navbar navbar-default" ng-controller="NavCtrl">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -22,8 +22,8 @@
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav navbar-right" ng-repeat="thingy in navItems">
-		        <li><a ng-href="{{thingy.url}}">{{thingy.name}}</a></li>
+		      <ul class="nav navbar-nav navbar-right" ng-repeat="navLink in navItems">
+		        <li><a ng-href="{{navLink.url}}">{{navLink.name}}</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -50,8 +50,8 @@
 		<script type="text/javascript"	src="lib/bower_components/angular-route/angular-route.min.js"></script>
 		<script type="text/javascript" src="app/app.js"></script>
 		<script type="text/javascript" src="app/controllers/NavCtrl.js"></script>
-		<script type="text/javascript" src="app/controllers/EntryListCtrl.js"></script>
 		<script type="text/javascript" src="app/controllers/EntryNewCtrl.js"></script>
+		<script type="text/javascript" src="app/controllers/EntryListCtrl.js"></script>
 		<script type="text/javascript" src="app/controllers/EntryViewCtrl.js"></script>
 	</body>
 </html>
