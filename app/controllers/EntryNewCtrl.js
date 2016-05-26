@@ -12,10 +12,6 @@ app.controller("EntryNewCtrl", function($scope, $http, $location){
 
 
 	$scope.addNewEntry = function(){
-		$scope.newEntry.id = $scope.entries.length;
-		console.log("you added a new item", $scope.newEntry);
-		$scope.entries.push($scope.newEntry);
-		$scope.newEntry = "";
 		$http.post(
 			"https://book-of-addresses.firebaseio.com/contacts.json",
 			JSON.stringify({
@@ -29,7 +25,7 @@ app.controller("EntryNewCtrl", function($scope, $http, $location){
 			})
 			).success(function(response){
 				console.log(response);
-				$location.url("entries/list")
-			})
+				$location.url("entries/list");
+			});
 	};
 });
