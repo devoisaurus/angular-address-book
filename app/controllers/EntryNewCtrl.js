@@ -1,43 +1,35 @@
-app.controller("EntryNewCtrl", function($scope){
-	$scope.newEntry = {};
+app.controller("EntryNewCtrl", function($scope, $http, $location){
+	$scope.newEntry = {
+		birthday: "",
+		cityStateZip: "",
+		email: "",
+		name: "",
+		personalNotes: "",
+		phoneNumber: "",
+		streetAddress: ""
+	};
 
-	$scope.entries = [
-	{
-		id: 0,
-		name: "Buffy Summers",
-		nickName: "Buff",
-		streetAddress: "123 Somestreet",
-		cityStateZip: "Sunnydale, CA 90131",
-		email: "buff@vampslayers.org",
-		phoneNumber: "(341)555-9275",
-		personalNotes: "the Slayer?"
-			},
-			{
-		id: 1,
-		name: "Ian Malcom",
-		nickName: "",
-		streetAddress: "275 Streetname",
-		cityStateZip: "Austin, TX 38759",
-		email: "DrMalcom@uta.edu",
-		phoneNumber: "(373)555-9646",
-		personalNotes: "mumbles about Chaos theory a lot"
-			},
-			{
-		id: 2,
-		name: "Harleen Quinzel",
-		nickName: "Harley",
-		streetAddress: "13411 Belle Reve",
-		cityStateZip: "Arkham, MA 42562",
-		email: "DrQuinzel@arkham.org",
-		phoneNumber: "(728)145-2855",
-		personalNotes: "slightly unhinged"
-			}
-		];
+
 
 	$scope.addNewEntry = function(){
 		$scope.newEntry.id = $scope.entries.length;
 		console.log("you added a new item", $scope.newEntry);
 		$scope.entries.push($scope.newEntry);
 		$scope.newEntry = "";
+		$http.post(
+			"https://book-of-addresses.firebaseio.com/contacts.json",
+			JSON.stringify({
+				birthday: $scope.newEntry.birthday,
+				cityStateZip: $scope.newEntry.cityStateZip,
+				email: $scope.newEntry.email,
+				name: $scope.newEntry.name,
+				personalNotes: $scope.newEntry.personalNotes,
+				phoneNumber: $scope.newEntry.phoneNumber,
+				streetAddress: $scope.newEntry.streetAddress
+			})
+			).success(function(response){
+				console.log(response);
+				$location.url("entries/list")
+			})
 	};
 });

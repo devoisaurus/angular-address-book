@@ -1,0 +1,54 @@
+{
+  "contacts": {
+
+    "contact0":  {
+      "name": "Kaitlyn Ross",
+      "birthday": "7/19",
+      "streetAddress": "576 East Elm Terrace",
+      "cityStateZip": "Frisco, MT 73429",
+      "email": "kross158@ssornyltiak.net",
+      "phoneNumber": "(834)226-5684",
+      "personalNotes": "known since middle school"
+      },
+ 
+    "contact1":  {
+      "name": "Isiah Holt",
+      "birthday": "6/9",
+      "streetAddress": "196 2nd Avenue",
+      "cityStateZip": "St Paul, NH 56499",
+      "email": "iholt633@tlohhaisi.org",
+      "phoneNumber": "(648)482-0826",
+      "personalNotes": "DO NOT DRUNK TEXT"
+      },
+
+    "contact2":  {
+      "name": "Colby Norris",
+      "birthday": "7/8",
+      "streetAddress": "598 Cleveland Pl",
+      "cityStateZip": "Oakland, IA 99350",
+      "email": "colnor25@sirronc.biz",
+      "phoneNumber": "(233)879-2454",
+      "personalNotes": "avid douchebag"
+      },
+
+   "contact3":  {
+      "name": "Lawrence Hanson",
+      "birthday": "3/19",
+      "streetAddress": "406 West Plum Way",
+      "cityStateZip": "Rockford, NH 61172",
+      "email": "larry@hanlaw.com",
+      "phoneNumber": "(645)578-9455",
+      "personalNotes": "co-worker, be careful"
+      },
+
+    "contact4":  {
+      "name": "Candice Bowman",
+      "birthday": "8/29",
+      "streetAddress": "773 Oak Park Dr",
+      "cityStateZip": "Waterbury, NM 93945",
+      "email": "candybowl@namwob@net",
+      "phoneNumber": "(573)587-8465",
+      "personalNotes": "multi-level marketing pusher"
+      }
+    }
+  }

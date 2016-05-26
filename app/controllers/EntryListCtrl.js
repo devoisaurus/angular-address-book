@@ -1,35 +1,13 @@
-app.controller("EntryListCtrl", function($scope){
-	$scope.entries = [
-	{
-		id: 0,
-		name: "Buffy Summers",
-		nickName: "Buff",
-		streetAddress: "123 Somestreet",
-		cityStateZip: "Sunnydale, CA 90131",
-		email: "buff@vampslayers.org",
-		phoneNumber: "(341)555-9275",
-		personalNotes: "the Slayer?"
-			},
-			{
-		id: 1,
-		name: "Ian Malcom",
-		nickName: "",
-		streetAddress: "275 Streetname",
-		cityStateZip: "Austin, TX 38759",
-		email: "DrMalcom@uta.edu",
-		phoneNumber: "(373)555-9646",
-		personalNotes: "mumbles about Chaos theory a lot"
-			},
-			{
-		id: 2,
-		name: "Harleen Quinzel",
-		nickName: "Harley",
-		streetAddress: "13411 Belle Reve",
-		cityStateZip: "Arkham, MA 42562",
-		email: "DrQuinzel@arkham.org",
-		phoneNumber: "(728)145-2855",
-		personalNotes: "slightly unhinged"
-			}
-		];
+app.controller("EntryListCtrl", function($scope, $http){
+	$scope.entries = [];
+
+		$http.get("https://book-of-addresses.firebaseio.com/contacts.json")
+		.success(function(contactList){
+			var addressBook = contactList;
+			Object.keys(addressBook).forEach(function(key){
+				addressBook[key].id=key;
+				$scope.entries.push(addressBook[key]);
+			})
+		})
 
 });
