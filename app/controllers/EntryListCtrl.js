@@ -1,25 +1,17 @@
-app.controller("EntryListCtrl", function($scope, $http){
+app.controller("EntryListCtrl", function($scope, $http, $location, contactStorage){
 	$scope.entries = [];
-	var getContacts = function(){
-		$http.get("https://book-of-addresses.firebaseio.com/contacts.json")
-		.success(function(contactList){
-			var addressBook = contactList;
-			Object.keys(addressBook).forEach(function(key){
-				addressBook[key].id=key;
-				$scope.entries.push(addressBook[key]);
-			});
-	});
-};
 
-	getContacts();
+	contactStorage.getContacts().then(function(addressBook){
+		console.log("addressBook from promise", addressBook);
+		$scope.entries = addressBook;
+	})
+
 		$scope.deleteContact = function(contactId){
-			console.log(contactId);
-			$http
-			.delete(`https://book-of-addresses.firebaseio.com/contacts/${contactId}.json`)
-			.success(function(response){
-				console.log(response);
-				$scope.entries=[];
-				getContacts();
+			console.log("contactID", contactId);
+			contactStorage.deleteContact(contactId).then(function(response){
+				contactStorage.getContacts().then(function(addressBook){
+					$scope.entries = addressBook;
+				});
 			});
 		};
 });
