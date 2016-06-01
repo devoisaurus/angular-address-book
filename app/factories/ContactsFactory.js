@@ -37,6 +37,7 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
 						cityStateZip: newEntry.cityStateZip,
 						email: newEntry.email,
 						name: newEntry.name,
+            nickname: newEntry.nickName,
 						personalNotes: newEntry.personalNotes,
 						phoneNumber: newEntry.phoneNumber,
 						streetAddress: newEntry.streetAddress
@@ -71,6 +72,7 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
               cityStateZip: newEntry.cityStateZip,
               email: newEntry.email,
               name: newEntry.name,
+              nickname: newEntry.nickName,
               personalNotes: newEntry.personalNotes,
               phoneNumber: newEntry.phoneNumber,
               streetAddress: newEntry.streetAddress

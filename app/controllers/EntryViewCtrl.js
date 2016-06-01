@@ -7,7 +7,7 @@ app.controller("EntryViewCtrl", function($scope, $http, $routeParams, contactSto
 		$scope.contacts = addressBook;
 
 		$scope.selectedContact = $scope.contacts.filter(function(contact){
-			return contact.id === $routeParams.contactId
+			return contact.id === $routeParams.contactId;
 				})[0];
 			});
 		});

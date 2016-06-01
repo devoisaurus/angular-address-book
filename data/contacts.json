@@ -3,6 +3,7 @@
 
     "contact0":  {
       "name": "Kaitlyn Ross",
+      "nickName": "K-Ro",
       "birthday": "7/19",
       "streetAddress": "576 East Elm Terrace",
       "cityStateZip": "Frisco, MT 73429",
@@ -13,6 +14,7 @@
  
     "contact1":  {
       "name": "Isiah Holt",
+      "nickName": "Holter",
       "birthday": "6/9",
       "streetAddress": "196 2nd Avenue",
       "cityStateZip": "St Paul, NH 56499",
@@ -23,6 +25,7 @@
 
     "contact2":  {
       "name": "Colby Norris",
+      "nickName": "cheeserito",
       "birthday": "7/8",
       "streetAddress": "598 Cleveland Pl",
       "cityStateZip": "Oakland, IA 99350",
@@ -33,6 +36,7 @@
 
    "contact3":  {
       "name": "Lawrence Hanson",
+      "nickName": "Mmmbop",
       "birthday": "3/19",
       "streetAddress": "406 West Plum Way",
       "cityStateZip": "Rockford, NH 61172",
@@ -43,6 +47,7 @@
 
     "contact4":  {
       "name": "Candice Bowman",
+      "nickName": "candybowl",
       "birthday": "8/29",
       "streetAddress": "773 Oak Park Dr",
       "cityStateZip": "Waterbury, NM 93945",

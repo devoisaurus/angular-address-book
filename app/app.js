@@ -15,7 +15,7 @@ app.config(function($routeProvider){
 		templateUrl: 'partials/entries-details.html',
 		controller: "EntryViewCtrl"
 	}).
-	when('entries/:contactId/edit', {
+	when('/entries/:contactId/edit', {
 		templateUrl: 'partials/entries-new.html',
 		controller: "EntryEditCtrl"
 	}).

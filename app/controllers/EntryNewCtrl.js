@@ -6,6 +6,7 @@ app.controller("EntryNewCtrl", function($scope, $http, $location, contactStorage
 		cityStateZip: "",
 		email: "",
 		name: "",
+		nickName: "",
 		personalNotes: "",
 		phoneNumber: "",
 		streetAddress: ""
