@@ -1,11 +1,9 @@
-"use strict";
-
-app.factory("contactStorage", function($q, $http){
+app.factory("contactStorage", function($q, $http, firebaseURL){
 
  	var getContacts = function(){
- 			let entries = [];
+ 			var entries = [];
  			return $q(function(resolve, reject){
- 			$http.get("https://book-of-addresses.firebaseio.com/contacts.json")
+ 			$http.get(firebaseURL + "contacts.json")
  				.success(function(contactList){
  						var addressBook = contactList;
  						Object.keys(addressBook).forEach(function(key){
@@ -23,7 +21,7 @@ app.factory("contactStorage", function($q, $http){
   	var deleteContact = function(contactId){
   		return $q(function(resolve, reject){
   			$http
-  			.delete(`https://book-of-addresses.firebaseio.com/contacts/${contactId}.json`)
+  			.delete(firebaseURL + "contacts/" + contactId + ".json")
   			.success(function(objectFromFirebase){
   				resolve(objectFromFirebase);
   		});
@@ -33,7 +31,7 @@ app.factory("contactStorage", function($q, $http){
   	var addNewEntry = function(newEntry){
   		return $q(function(resolve, reject){
   			$http.post(
-  				"https://book-of-addresses.firebaseio.com/contacts.json",
+  				firebaseURL + "contacts.json",
   				JSON.stringify({
   					birthday: newEntry.birthday,
 						cityStateZip: newEntry.cityStateZip,

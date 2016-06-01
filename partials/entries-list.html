@@ -1,7 +1,7 @@
 <h1>Address Book</h1>
 	<div class="row">
 		<div class="col-xs-6 col-xs-offset-3">
-			<div class="input-group">
+			<div class="input-group search-bar-spacing">
 					<span class="input-group-btn">
 							<button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
 					</span>
@@ -9,6 +9,17 @@
 			</div>
 		</div>
 	</div>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-4">Name</div>
+		<div class="col-xs-3">Email</div>
+		<div class="col-xs-3">Phone Number</div>
+		<div class="col-xs-1"></div>
+	</div>
+</div>
+
+
 	<div ng-repeat="person in entries | filter:searchText">
 		<div class="panel panel-default">
 				<div class="panel-body">

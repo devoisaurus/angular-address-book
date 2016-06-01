@@ -1,4 +1,5 @@
-var app = angular.module("AddressApp", ["ngRoute"]);
+var app = angular.module("AddressApp", ["ngRoute"])
+.constant("firebaseURL", "https://book-of-addresses.firebaseio.com/");
 
 app.config(function($routeProvider){
 	$routeProvider.
