@@ -4,7 +4,6 @@ app.controller("EntryViewCtrl", function($scope, $http, $routeParams, contactSto
 	console.log($routeParams.contactId);
 
 	contactStorage.getContacts().then(function(addressBook){
-		console.log("addressBook from promise", addressBook);
 		$scope.contacts = addressBook;
 
 		$scope.selectedContact = $scope.contacts.filter(function(contact){

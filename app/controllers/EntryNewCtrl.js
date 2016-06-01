@@ -1,4 +1,6 @@
 app.controller("EntryNewCtrl", function($scope, $http, $location, contactStorage){
+	$scope.title = "New Contact";
+	$scope.submitButtonText = "Add New Contact"
 	$scope.newEntry = {
 		birthday: "",
 		cityStateZip: "",

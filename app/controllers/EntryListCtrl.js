@@ -2,7 +2,7 @@ app.controller("EntryListCtrl", function($scope, $http, $location, contactStorag
 	$scope.entries = [];
 
 	contactStorage.getContacts().then(function(addressBook){
-		console.log("addressBook from promise", addressBook);
+
 		$scope.entries = addressBook;
 	})
 

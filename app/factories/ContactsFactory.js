@@ -47,8 +47,43 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
   					resolve(objectFromFirebase);
   				}
   				);
-  	});
+  	 });
   	};
-  		return {getContacts:getContacts, deleteContact:deleteContact, addNewEntry:addNewEntry};
+
+      var getSingleContact = function(contactId) {
+        return $q(function(resolve, reject){
+          $http.get(firebaseURL + "contacts/" + contactId + ".json")
+          .success(function(addressBook){
+            resolve(addressBook);
+          })
+          .error(function(error){
+            reject(error)
+          });
+        });
+      };
+
+      var updateContact = function(contactId, newEntry){
+        return $q(function(resolve, reject){
+          $http.put(
+            firebaseURL + "contacts/" + contactId + ".json",
+            JSON.stringify({
+              birthday: newEntry.birthday,
+              cityStateZip: newEntry.cityStateZip,
+              email: newEntry.email,
+              name: newEntry.name,
+              personalNotes: newEntry.personalNotes,
+              phoneNumber: newEntry.phoneNumber,
+              streetAddress: newEntry.streetAddress
+            })
+          )
+          .success(
+            function(objectFromFirebase){
+              resolve(objectFromFirebase);
+            }
+          );
+        });
+      };
+
+  		return {getContacts:getContacts, deleteContact:deleteContact, addNewEntry:addNewEntry, getSingleContact:getSingleContact, updateContact:updateContact};
 
 });
